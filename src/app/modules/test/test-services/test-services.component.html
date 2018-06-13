@@ -1,0 +1,56 @@
+
+<!-- <pre>{{ db | json }}</pre> -->
+
+
+<!-- <div class="page-container2"
+  fxLayout="row"
+  fxLayoutAlign="start start"
+  fxLayoutWrap
+  fxLayoutGap="20px"
+  >
+  <mat-card>1</mat-card>
+  <mat-card>2</mat-card>
+  <mat-card>3</mat-card>
+  <mat-card>4</mat-card>
+  <mat-card>5</mat-card>
+  <mat-card>6</mat-card>
+  <mat-card>7</mat-card>
+  <mat-card>8</mat-card>
+  <mat-card>9</mat-card>
+  <mat-card>10</mat-card>
+  <mat-card>11</mat-card>
+  <mat-card>12</mat-card>
+</div> -->
+<div class="page-container" fxLayout="row">
+  <mat-card *ngFor="let movie of db" class="movie-card">
+    <mat-card-header>
+      <mat-card-title>
+        <i class="material-icons mdx2">local_movies</i>
+        {{ movie.movie }}
+      </mat-card-title>
+      <mat-card-subtitle>{{movie.category}}</mat-card-subtitle>
+    </mat-card-header>
+    <hr>
+    <mat-card-content>
+      <p>Country: {{movie.country}}</p>
+      A
+      <ul>
+        <li *ngFor="let actor of movie.actors">
+          {{ actor }}
+        </li>
+      </ul>
+      <div>
+        <i class="material-icons ranking">star</i>
+        {{ movie.ranking }}
+      </div>
+    </mat-card-content>
+  </mat-card>
+
+</div>
+<div fxLayout="row" fxLayoutAlign="space-around center"  class="btn-bar">
+  <button mat-raised-button (click)="update(0, 6)">update ranking movie 1</button>
+  <button mat-raised-button (click)="update(1, 9)">update ranking movie 2</button>
+  <button mat-raised-button (click)="update(2, 10)">update ranking movie 3</button>
+</div>
+
+

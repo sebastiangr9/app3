@@ -1,0 +1,5 @@
+<ul>
+  <li *ngFor="let actor of actors; let i = index">
+    <a [routerLink]="['/actorDetail', i]">{{actor.name}}</a>
+  </li>
+</ul>

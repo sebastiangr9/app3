@@ -1,0 +1,6 @@
+<!-- <pre>{{ movies | json }}</pre> -->
+<ol>
+  <li *ngFor="let movie of movies">
+    <a [routerLink]="['/tmdb/credits', movie.id]">{{ movie.title }}</a>
+  </li>
+</ol>
